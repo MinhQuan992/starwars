@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import NavBar from "./components/NavBar";
 import People from "./components/People";
 import Planets from "./components/Planets";
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           {page === "planets" ? <Planets /> : <People />}
         </div>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
